@@ -1,5 +1,7 @@
 import { useParams } from "react-router-dom";
+import { useAllUsers } from "../../../api/hooks/useUsers";
 import { Skeleton } from "../../atoms/Skeleton";
+import { useMemo } from "react";
 import MailIcon from "../../atoms/MailIcon.tsx";
 import PhoneIcon from "../../atoms/PhoneIcon.tsx";
 import GlobeIcon from "../../atoms/GlobeIcon.tsx";
@@ -9,8 +11,11 @@ import BuildingIcon from "../../atoms/BuildingIcon.tsx";
 
 const UserDetail = () => {
   const { id } = useParams<{ id: string }>();
-  const isLoading = false;
-  console.log(id);
+  const { getUserById, isLoading } = useAllUsers();
+
+  const user = useMemo(() => {
+    return id ? getUserById(parseInt(id)) : undefined;
+  }, [id, getUserById]);
 
   if (isLoading) {
     return (
@@ -37,9 +42,9 @@ const UserDetail = () => {
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
         <div className="border-b border-gray-200 dark:border-gray-700 pb-6 mb-6">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-            "Data"
+            {user?.name}
           </h1>
-          <p className="text-gray-600 dark:text-gray-400"> "Data"</p>
+          <p className="text-gray-600 dark:text-gray-400">@{user?.username}</p>
         </div>
 
         <div className="space-y-6">
@@ -54,7 +59,7 @@ const UserDetail = () => {
                   <p className="text-sm text-gray-600 dark:text-gray-400">
                     Email
                   </p>
-                  <p className="text-gray-900 dark:text-white"> "Data"</p>
+                  <p className="text-gray-900 dark:text-white">{user?.email}</p>
                 </div>
               </div>
 
@@ -64,7 +69,7 @@ const UserDetail = () => {
                   <p className="text-sm text-gray-600 dark:text-gray-400">
                     Phone
                   </p>
-                  <p className="text-gray-900 dark:text-white"> "Data"</p>
+                  <p className="text-gray-900 dark:text-white">{user?.phone}</p>
                 </div>
               </div>
 
@@ -75,12 +80,12 @@ const UserDetail = () => {
                     Website
                   </p>
                   <a
-                    href={`https://test`}
+                    href={`https://${user?.website}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 dark:text-blue-400 hover:underline"
                   >
-                    "Data"
+                    {user?.website ? user?.website : "N/A"}
                   </a>
                 </div>
               </div>
@@ -93,7 +98,18 @@ const UserDetail = () => {
             </h3>
             <div className="flex items-start">
               <PinIcon />
-              "Data"
+              {user?.address?.street || user?.address?.city ? (
+                <div>
+                  <p className="text-gray-900 dark:text-white">
+                    {user?.address.street} {user?.address.suite}
+                  </p>
+                  <p className="text-gray-900 dark:text-white">
+                    {user?.address.city} {user?.address.zipcode}
+                  </p>
+                </div>
+              ) : (
+                <p className="text-gray-900 dark:text-white">No address</p>
+              )}
             </div>
           </div>
 
@@ -105,13 +121,13 @@ const UserDetail = () => {
               <BuildingIcon />
               <div>
                 <p className="text-gray-900 dark:text-white font-medium">
-                  "Data"
+                  {user?.company.name}
                 </p>
                 <p className="text-gray-600 dark:text-gray-400 text-sm italic">
-                  "Data"
+                  {user?.company?.catchPhrase || "No catchphrase"}
                 </p>
                 <p className="text-gray-500 dark:text-gray-500 text-sm mt-1">
-                  "Data"
+                  {user?.company?.bs || "No business slogan"}
                 </p>
               </div>
             </div>
