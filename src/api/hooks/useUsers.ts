@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import { fetchUsers, fetchUser } from "../users";
+import { fetchUsers, fetchUser } from "@src/api/users";
 import { useLocalStorage } from "./useLocalStorage";
 import { useMemo } from "react";
-import type { User } from "../../types/user";
+import type { User } from "@src/types/user";
 
 export const useUsers = () => {
   return useQuery({

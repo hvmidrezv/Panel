@@ -1,9 +1,9 @@
 import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ThemeProvider } from "./components/theme";
+import { ThemeProvider } from "@src/components/theme";
 import "./index.css";
-import MainLayout from "./components/layouts/MainLayout.tsx";
-import AppRoutes from "./components/routes";
+import MainLayout from "@src/components/layouts/MainLayout";
+import AppRoutes from "@src/components/routes";
 
 const queryClient = new QueryClient({
   defaultOptions: {

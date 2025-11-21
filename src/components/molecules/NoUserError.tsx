@@ -1,4 +1,4 @@
-import UserIcon from "../atoms/UserIcon.tsx";
+import UserIcon from "@src/components/atoms/UserIcon";
 
 type Props = {
   searchQuery: string;

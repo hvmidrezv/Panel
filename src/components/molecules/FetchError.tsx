@@ -1,4 +1,4 @@
-import ErrorIcon from "../atoms/ErrorIcon.tsx";
+import ErrorIcon from "@src/components/atoms/ErrorIcon";
 
 const FetchError = () => {
   return (

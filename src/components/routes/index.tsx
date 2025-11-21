@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import HomePage from "../pages/Home";
-import UserDetailPage from "../pages/UserDetail";
+import HomePage from "@src/components/pages/Home";
+import UserDetailPage from "@src/components/pages/UserDetail";
 
 const AppRoutes = () => {
   return (

@@ -1,7 +1,7 @@
-import { UserCardSkeleton } from "../../atoms/Skeleton.tsx";
-import type { User } from "../../../types/user.ts";
-import UserCardList from "../../organisms/UserCardList.tsx";
-import NoUserError from "../../molecules/NoUserError.tsx";
+import { UserCardSkeleton } from "@src/components/atoms/Skeleton";
+import type { User } from "@src/types/user";
+import UserCardList from "@src/components/organisms/UserCardList";
+import NoUserError from "@src/components/molecules/NoUserError";
 
 type Props = {
   searchQuery: string;

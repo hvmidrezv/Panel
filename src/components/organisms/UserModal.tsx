@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { userValidationSchema } from "../../validation/userValidation";
-import type { User, NewUser } from "../../types/user";
-import CloseModalBtn from "../molecules/CloseModalBtn";
+import { userValidationSchema } from "@src/validation/userValidation";
+import type { User, NewUser } from "@src/types/user";
+import CloseModalBtn from "@src/components/molecules/CloseModalBtn";
 
 interface UserModalProps {
   isOpen: boolean;

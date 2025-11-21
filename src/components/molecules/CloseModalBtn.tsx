@@ -1,4 +1,4 @@
-import CloseIcon from "../atoms/CloseIcon.tsx";
+import CloseIcon from "@src/components/atoms/CloseIcon";
 
 type Props = {
   handleClose: () => void;

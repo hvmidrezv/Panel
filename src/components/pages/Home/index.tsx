@@ -1,10 +1,10 @@
 import { useMemo, useState } from "react";
-import { useAllUsers } from "../../../api/hooks/useUsers";
-import { UserModal } from "../../organisms/UserModal";
-import type { NewUser, User } from "../../../types/user";
-import FetchError from "../../molecules/FetchError.tsx";
-import Header from "./Header.tsx";
-import Main from "./Main.tsx";
+import { useAllUsers } from "@src/api/hooks/useUsers";
+import { UserModal } from "@src/components/organisms/UserModal";
+import type { NewUser, User } from "@src/types/user";
+import FetchError from "@src/components/molecules/FetchError";
+import Header from "./Header";
+import Main from "./Main";
 
 const Home = () => {
   const {

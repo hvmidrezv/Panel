@@ -1,13 +1,13 @@
 import { useParams } from "react-router-dom";
-import { useAllUsers } from "../../../api/hooks/useUsers";
-import { Skeleton } from "../../atoms/Skeleton";
+import { useAllUsers } from "@src/api/hooks/useUsers";
+import { Skeleton } from "@src/components/atoms/Skeleton";
 import { useMemo } from "react";
-import MailIcon from "../../atoms/MailIcon.tsx";
-import PhoneIcon from "../../atoms/PhoneIcon.tsx";
-import GlobeIcon from "../../atoms/GlobeIcon.tsx";
-import PinIcon from "../../atoms/PinIcon.tsx";
-import BackButton from "../../molecules/BackButton.tsx";
-import BuildingIcon from "../../atoms/BuildingIcon.tsx";
+import MailIcon from "@src/components/atoms/MailIcon";
+import PhoneIcon from "@src/components/atoms/PhoneIcon";
+import GlobeIcon from "@src/components/atoms/GlobeIcon";
+import PinIcon from "@src/components/atoms/PinIcon";
+import BackButton from "@src/components/molecules/BackButton";
+import BuildingIcon from "@src/components/atoms/BuildingIcon";
 
 const UserDetail = () => {
   const { id } = useParams<{ id: string }>();

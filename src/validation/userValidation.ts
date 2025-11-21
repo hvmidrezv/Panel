@@ -1,5 +1,5 @@
 import * as yup from "yup";
-import type { NewUser } from "../types/user";
+import type { NewUser } from "@src/types/user";
 
 // Validation schema for user forms
 export const userValidationSchema = yup.object({

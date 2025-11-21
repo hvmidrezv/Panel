@@ -1,4 +1,4 @@
-import SearchIcon from "../atoms/SearchIcon.tsx";
+import SearchIcon from "@src/components/atoms/SearchIcon";
 
 interface SearchBarProps {
   value: string;

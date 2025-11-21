@@ -1,5 +1,5 @@
-import { SearchBar } from "../../molecules/SearchBar.tsx";
-import AddButton from "../../molecules/AddButton.tsx";
+import { SearchBar } from "@src/components/molecules/SearchBar";
+import AddButton from "@src/components/molecules/AddButton";
 
 type Props = {
   searchQuery: string;

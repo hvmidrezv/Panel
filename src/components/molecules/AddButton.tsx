@@ -1,4 +1,4 @@
-import PlusIcon from "../atoms/PlusIcon.tsx";
+import PlusIcon from "@src/components/atoms/PlusIcon";
 
 type Props = {
   setIsModalOpen: (isOpen: boolean) => void;

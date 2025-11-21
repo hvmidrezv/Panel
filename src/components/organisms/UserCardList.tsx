@@ -1,5 +1,5 @@
-import { UserCard } from "../molecules/UserCard.tsx";
-import type { User } from "../../types/user.ts";
+import { UserCard } from "@src/components/molecules/UserCard";
+import type { User } from "@src/types/user";
 
 type Props = {
   filteredUsers: User[];

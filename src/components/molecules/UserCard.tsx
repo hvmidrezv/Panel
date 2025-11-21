@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import type { User } from "../../types/user";
-import EditIcon from "../atoms/EditIcon.tsx";
-import DeleteIcon from "../atoms/DeleteIcon.tsx";
+import type { User } from "@src/types/user";
+import EditIcon from "@src/components/atoms/EditIcon";
+import DeleteIcon from "@src/components/atoms/DeleteIcon";
 
-// UserCard component props interface
 interface UserCardProps {
   user: User;
   onDelete?: (id: number) => void;

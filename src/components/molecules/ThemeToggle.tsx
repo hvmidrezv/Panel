@@ -1,6 +1,6 @@
-import { useTheme } from "../theme";
-import LightThemeIcon from "../atoms/LightThemeIcon.tsx";
-import DarkThemeIcon from "../atoms/DarkThemeIcon.tsx";
+import { useTheme } from "@src/components/theme";
+import LightThemeIcon from "@src/components/atoms/LightThemeIcon";
+import DarkThemeIcon from "@src/components/atoms/DarkThemeIcon";
 
 export const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
